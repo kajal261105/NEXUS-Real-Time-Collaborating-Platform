@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
+  color: #172033;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 22px 7%;
+  background: #172033;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.header p {
+  margin: 5px 0 0;
+  opacity: 0.75;
+}
+
+.status {
+  font-size: 14px;
+}
+
+.layout {
+  width: 86%;
+  max-width: 1200px;
+  margin: 30px auto;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 20px;
+}
+
+.sidebar,
+.chat {
+  background: white;
+  border: 1px solid #e3e7ef;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.05);
+}
+
+.sidebar {
+  padding: 20px;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+}
+
+.room {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  padding: 12px;
+  margin: 4px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.room:hover,
+.room.active {
+  background: #edf2ff;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  min-height: 560px;
+}
+
+.chat-header {
+  padding: 20px;
+  border-bottom: 1px solid #e7eaf0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.chat-header h2 {
+  margin: 0 0 5px;
+}
+
+.chat-header span {
+  color: #697386;
+  font-size: 13px;
+}
+
+.members {
+  align-self: center;
+}
+
+.messages {
+  padding: 20px;
+  flex: 1;
+}
+
+.message {
+  margin-bottom: 16px;
+  padding: 12px 15px;
+  background: #f5f7fb;
+  border-radius: 10px;
+}
+
+.message strong {
+  font-size: 14px;
+}
+
+.message p {
+  margin: 6px 0 0;
+}
+
+.composer {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  border-top: 1px solid #e7eaf0;
+}
+
+.composer input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #d8dde7;
+  border-radius: 8px;
+  outline: none;
+}
+
+.composer button {
+  border: 0;
+  padding: 0 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #172033;
+  color: white;
+}
+
+footer {
+  text-align: center;
+  padding: 18px;
+  color: #697386;
+  font-size: 13px;
+}
+
+@media (max-width: 700px) {
+  .layout {
+    width: 94%;
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: flex;
+    gap: 5px;
+    overflow-x: auto;
+  }
+
+  .sidebar h3 {
+    display: none;
+  }
+
+  .room {
+    min-width: 120px;
+  }
+}
